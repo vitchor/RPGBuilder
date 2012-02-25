@@ -151,7 +151,6 @@
 		444C6EE314F8A2EB00D92F28 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 444C6EE214F8A2EB00D92F28 /* main.m */; };
 		444C6EE614F8A2EB00D92F28 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 444C6EE514F8A2EB00D92F28 /* AppDelegate.m */; };
 		444C6EE914F8A2EB00D92F28 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 444C6EE814F8A2EB00D92F28 /* RootViewController.m */; };
-		444C6EEC14F8A2EB00D92F28 /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 444C6EEB14F8A2EB00D92F28 /* HelloWorldLayer.m */; };
 		444C6F0814F8A30900D92F28 /* back-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 444C6EF214F8A30900D92F28 /* back-hd.png */; };
 		444C6F0914F8A30900D92F28 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 444C6EF314F8A30900D92F28 /* back.png */; };
 		444C6F0A14F8A30900D92F28 /* ball-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 444C6EF414F8A30900D92F28 /* ball-hd.png */; };
@@ -166,7 +165,6 @@
 		444C6F1314F8A30900D92F28 /* Paddle.m in Sources */ = {isa = PBXBuildFile; fileRef = 444C6F0214F8A30900D92F28 /* Paddle.m */; };
 		444C6F1414F8A30900D92F28 /* paddle.png in Resources */ = {isa = PBXBuildFile; fileRef = 444C6F0314F8A30900D92F28 /* paddle.png */; };
 		444C6F1514F8A30900D92F28 /* PongScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 444C6F0514F8A30900D92F28 /* PongScene.m */; };
-		444C6F1614F8A30900D92F28 /* TouchesDemoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 444C6F0714F8A30900D92F28 /* TouchesDemoAppDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -432,8 +430,6 @@
 		444C6EE514F8A2EB00D92F28 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		444C6EE714F8A2EB00D92F28 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		444C6EE814F8A2EB00D92F28 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		444C6EEA14F8A2EB00D92F28 /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
-		444C6EEB14F8A2EB00D92F28 /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
 		444C6EF214F8A30900D92F28 /* back-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-hd.png"; sourceTree = "<group>"; };
 		444C6EF314F8A30900D92F28 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		444C6EF414F8A30900D92F28 /* ball-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ball-hd.png"; sourceTree = "<group>"; };
@@ -454,8 +450,6 @@
 		444C6F0314F8A30900D92F28 /* paddle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paddle.png; sourceTree = "<group>"; };
 		444C6F0414F8A30900D92F28 /* PongScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PongScene.h; sourceTree = "<group>"; };
 		444C6F0514F8A30900D92F28 /* PongScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PongScene.m; sourceTree = "<group>"; };
-		444C6F0614F8A30900D92F28 /* TouchesDemoAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchesDemoAppDelegate.h; sourceTree = "<group>"; };
-		444C6F0714F8A30900D92F28 /* TouchesDemoAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchesDemoAppDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -516,14 +510,10 @@
 				444C6EFD14F8A30900D92F28 /* CharMovementDelegate.h */,
 				444C6F0414F8A30900D92F28 /* PongScene.h */,
 				444C6F0514F8A30900D92F28 /* PongScene.m */,
-				444C6F0614F8A30900D92F28 /* TouchesDemoAppDelegate.h */,
-				444C6F0714F8A30900D92F28 /* TouchesDemoAppDelegate.m */,
 				444C6EE414F8A2EB00D92F28 /* AppDelegate.h */,
 				444C6EE514F8A2EB00D92F28 /* AppDelegate.m */,
 				444C6EE714F8A2EB00D92F28 /* RootViewController.h */,
 				444C6EE814F8A2EB00D92F28 /* RootViewController.m */,
-				444C6EEA14F8A2EB00D92F28 /* HelloWorldLayer.h */,
-				444C6EEB14F8A2EB00D92F28 /* HelloWorldLayer.m */,
 				444C6D5514F8A2E800D92F28 /* Resources */,
 				444C6D6B14F8A2E800D92F28 /* Shaders */,
 				444C6DA214F8A2E900D92F28 /* libs */,
@@ -1135,13 +1125,11 @@
 				444C6EE314F8A2EB00D92F28 /* main.m in Sources */,
 				444C6EE614F8A2EB00D92F28 /* AppDelegate.m in Sources */,
 				444C6EE914F8A2EB00D92F28 /* RootViewController.m in Sources */,
-				444C6EEC14F8A2EB00D92F28 /* HelloWorldLayer.m in Sources */,
 				444C6F0B14F8A30900D92F28 /* Ball.m in Sources */,
 				444C6F0D14F8A30900D92F28 /* CenterBall.m in Sources */,
 				444C6F0E14F8A30900D92F28 /* Char.m in Sources */,
 				444C6F1314F8A30900D92F28 /* Paddle.m in Sources */,
 				444C6F1514F8A30900D92F28 /* PongScene.m in Sources */,
-				444C6F1614F8A30900D92F28 /* TouchesDemoAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
