@@ -448,7 +448,7 @@
 		444C6F0114F8A30900D92F28 /* Paddle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Paddle.h; sourceTree = "<group>"; };
 		444C6F0214F8A30900D92F28 /* Paddle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Paddle.m; sourceTree = "<group>"; };
 		444C6F0314F8A30900D92F28 /* paddle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paddle.png; sourceTree = "<group>"; };
-		444C6F0414F8A30900D92F28 /* ActionScene.h */ = {isa = PBXFileReference; fileEncoding = 4; path = ActionScene.h; sourceTree = "<group>"; };
+		444C6F0414F8A30900D92F28 /* ActionScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionScene.h; sourceTree = "<group>"; };
 		444C6F0514F8A30900D92F28 /* ActionScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionScene.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -506,8 +506,8 @@
 		444C6D5414F8A2E800D92F28 /* RPGBuilder */ = {
 			isa = PBXGroup;
 			children = (
+				444C6F4A14F8B3CA00D92F28 /* Protocols */,
 				444C6F3714F8AA4D00D92F28 /* Sprites */,
-				444C6EFD14F8A30900D92F28 /* CharMovementDelegate.h */,
 				444C6F0414F8A30900D92F28 /* ActionScene.h */,
 				444C6F0514F8A30900D92F28 /* ActionScene.m */,
 				444C6EE414F8A2EB00D92F28 /* AppDelegate.h */,
@@ -917,6 +917,14 @@
 				444C6F0214F8A30900D92F28 /* Paddle.m */,
 			);
 			name = Sprites;
+			sourceTree = "<group>";
+		};
+		444C6F4A14F8B3CA00D92F28 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				444C6EFD14F8A30900D92F28 /* CharMovementDelegate.h */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
