@@ -512,15 +512,8 @@
 		444C6D5414F8A2E800D92F28 /* RPGBuilder */ = {
 			isa = PBXGroup;
 			children = (
-				444C6EF514F8A30900D92F28 /* Ball.h */,
-				444C6EF614F8A30900D92F28 /* Ball.m */,
-				444C6EF814F8A30900D92F28 /* CenterBall.h */,
-				444C6EF914F8A30900D92F28 /* CenterBall.m */,
-				444C6EFA14F8A30900D92F28 /* Char.h */,
-				444C6EFB14F8A30900D92F28 /* Char.m */,
+				444C6F3714F8AA4D00D92F28 /* Sprites */,
 				444C6EFD14F8A30900D92F28 /* CharMovementDelegate.h */,
-				444C6F0114F8A30900D92F28 /* Paddle.h */,
-				444C6F0214F8A30900D92F28 /* Paddle.m */,
 				444C6F0414F8A30900D92F28 /* PongScene.h */,
 				444C6F0514F8A30900D92F28 /* PongScene.m */,
 				444C6F0614F8A30900D92F28 /* TouchesDemoAppDelegate.h */,
@@ -921,6 +914,21 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		444C6F3714F8AA4D00D92F28 /* Sprites */ = {
+			isa = PBXGroup;
+			children = (
+				444C6EF514F8A30900D92F28 /* Ball.h */,
+				444C6EF614F8A30900D92F28 /* Ball.m */,
+				444C6EF814F8A30900D92F28 /* CenterBall.h */,
+				444C6EF914F8A30900D92F28 /* CenterBall.m */,
+				444C6EFA14F8A30900D92F28 /* Char.h */,
+				444C6EFB14F8A30900D92F28 /* Char.m */,
+				444C6F0114F8A30900D92F28 /* Paddle.h */,
+				444C6F0214F8A30900D92F28 /* Paddle.m */,
+			);
+			name = Sprites;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1231,6 +1239,7 @@
 				444C6EF114F8A2EB00D92F28 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
