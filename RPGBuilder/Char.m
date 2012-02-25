@@ -24,6 +24,7 @@
 
 - (void)updatePositionWithDX:(CGFloat)dx andDY:(CGFloat)dy
 {
+    
     CGFloat speed = 0.2;
     self.position = CGPointMake(self.position.x + dx * speed, self.position.y + dy *speed);
 }

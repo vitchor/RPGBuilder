@@ -72,6 +72,7 @@
     } else {
         hasBeenTouched = YES;
     }
+    [movementListener movedX:-dx andY:-dy];
     
     mLastTouchPoint.x = touchPoint.x;
     mLastTouchPoint.y = touchPoint.y;    

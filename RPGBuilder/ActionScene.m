@@ -1,6 +1,6 @@
 /* TouchesTest (c) Valentin Milea 2009
  */
-#import "PongScene.h"
+#import "ActionScene.h"
 #import "Paddle.h"
 #import "Ball.h"
 #import "CenterBall.h"
@@ -18,17 +18,17 @@ enum {
 	kSpriteTag
 };
 
-@interface PongLayer ()
+@interface ActionLayer ()
 @end
 
-@implementation PongScene
+@implementation ActionScene
 
 - (id)init
 {
 	if ((self = [super init]) == nil) return nil;
 	
-	PongLayer *pongLayer = [PongLayer node];
-	[self addChild:pongLayer];
+	ActionLayer *actionLayer = [ActionLayer node];
+	[self addChild:actionLayer];
 	
 	return self;
 }
@@ -40,7 +40,7 @@ enum {
 
 @end
 
-@implementation PongLayer
+@implementation ActionLayer
 
 - (id)init
 {
@@ -91,9 +91,6 @@ enum {
 
 - (void)movedX:(CGFloat)dx andY:(CGFloat)dy 
 {
-    NSLog(@"B");
-    NSLog(@"B");
-    NSLog(@"B");
     [mCharacter updatePositionWithDX:dx andDY:dy];
 }
 

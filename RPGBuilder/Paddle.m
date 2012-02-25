@@ -5,6 +5,7 @@
 
 @implementation Paddle
 
+@synthesize movementListener = movementListener;
 - (id)init
 {
     hasBeenTouched = NO;

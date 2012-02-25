@@ -12,7 +12,7 @@
 //
 
 #import "cocos2d.h"
-#import "PongScene.h"
+#import "ActionScene.h"
 #import "RootViewController.h"
 
 @implementation RootViewController
@@ -44,7 +44,7 @@
          CCLOG(@"Retina Display Not supported");
      
      //	[[CCTouchDispatcher sharedDispatcher] link];
-     [director runWithScene:[PongScene node]];
+     [director runWithScene:[ActionScene node]];
 
  }
  
@@ -66,7 +66,7 @@
          CCLOG(@"Retina Display Not supported");
      
      //	[[CCTouchDispatcher sharedDispatcher] link];
-     [director runWithScene:[PongScene node]]; 
+     [director runWithScene:[ActionScene node]]; 
 	[super viewDidLoad];
  }
  

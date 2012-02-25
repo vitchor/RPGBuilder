@@ -10,7 +10,7 @@
 
 #import "AppDelegate.h"
 #import "RootViewController.h"
-#import "PongScene.h"
+#import "ActionScene.h"
 
 @implementation AppDelegate
 
@@ -68,7 +68,7 @@
 		CCLOG(@"Retina Display Not supported");
 	
     //	[[CCTouchDispatcher sharedDispatcher] link];
-	[director runWithScene:[PongScene node]];
+	[director runWithScene:[ActionScene node]];
 }
 
 

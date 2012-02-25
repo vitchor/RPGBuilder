@@ -164,7 +164,7 @@
 		444C6F1214F8A30900D92F28 /* paddle-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 444C6F0014F8A30900D92F28 /* paddle-hd.png */; };
 		444C6F1314F8A30900D92F28 /* Paddle.m in Sources */ = {isa = PBXBuildFile; fileRef = 444C6F0214F8A30900D92F28 /* Paddle.m */; };
 		444C6F1414F8A30900D92F28 /* paddle.png in Resources */ = {isa = PBXBuildFile; fileRef = 444C6F0314F8A30900D92F28 /* paddle.png */; };
-		444C6F1514F8A30900D92F28 /* PongScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 444C6F0514F8A30900D92F28 /* PongScene.m */; };
+		444C6F1514F8A30900D92F28 /* ActionScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 444C6F0514F8A30900D92F28 /* ActionScene.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -448,8 +448,8 @@
 		444C6F0114F8A30900D92F28 /* Paddle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Paddle.h; sourceTree = "<group>"; };
 		444C6F0214F8A30900D92F28 /* Paddle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Paddle.m; sourceTree = "<group>"; };
 		444C6F0314F8A30900D92F28 /* paddle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paddle.png; sourceTree = "<group>"; };
-		444C6F0414F8A30900D92F28 /* PongScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PongScene.h; sourceTree = "<group>"; };
-		444C6F0514F8A30900D92F28 /* PongScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PongScene.m; sourceTree = "<group>"; };
+		444C6F0414F8A30900D92F28 /* ActionScene.h */ = {isa = PBXFileReference; fileEncoding = 4; path = ActionScene.h; sourceTree = "<group>"; };
+		444C6F0514F8A30900D92F28 /* ActionScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionScene.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -508,8 +508,8 @@
 			children = (
 				444C6F3714F8AA4D00D92F28 /* Sprites */,
 				444C6EFD14F8A30900D92F28 /* CharMovementDelegate.h */,
-				444C6F0414F8A30900D92F28 /* PongScene.h */,
-				444C6F0514F8A30900D92F28 /* PongScene.m */,
+				444C6F0414F8A30900D92F28 /* ActionScene.h */,
+				444C6F0514F8A30900D92F28 /* ActionScene.m */,
 				444C6EE414F8A2EB00D92F28 /* AppDelegate.h */,
 				444C6EE514F8A2EB00D92F28 /* AppDelegate.m */,
 				444C6EE714F8A2EB00D92F28 /* RootViewController.h */,
@@ -1129,7 +1129,7 @@
 				444C6F0D14F8A30900D92F28 /* CenterBall.m in Sources */,
 				444C6F0E14F8A30900D92F28 /* Char.m in Sources */,
 				444C6F1314F8A30900D92F28 /* Paddle.m in Sources */,
-				444C6F1514F8A30900D92F28 /* PongScene.m in Sources */,
+				444C6F1514F8A30900D92F28 /* ActionScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

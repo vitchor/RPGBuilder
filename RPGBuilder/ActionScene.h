@@ -4,14 +4,14 @@
 #import "CharMovementDelegate.h"
 #import "Char.h"
 
-@interface PongScene : CCScene {
+@interface ActionScene : CCScene {
 @private
 }
 @end
 
 @class Ball;
 
-@interface PongLayer: CCLayer <CharMovementDelegate>{
+@interface ActionLayer: CCLayer <CharMovementDelegate>{
 @private
 	Ball *ball;
 	NSArray *paddles;
