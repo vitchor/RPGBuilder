@@ -26,7 +26,7 @@
 + (Char *)mainChar;
 + (void)setMainChar:(Char *)newMainChar;
 
-- (bool)colideWithSprite:(CCSpriteExtended *)sprite;
+- (void)colideWithSprites:(NSMutableArray *)sprites;
 - (void)updateSpeedWithDX:(CGFloat)dx andDY:(CGFloat)dy;
 - (void)move;
 @end

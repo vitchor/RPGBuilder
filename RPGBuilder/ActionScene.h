@@ -14,21 +14,3 @@
 @property (nonatomic, retain) CCAction *walkAction;
 @property (nonatomic, retain) CCAction *moveAction;
 @end
-
-
-@class Ball;
-
-
-@interface ActionLayer: CCLayer <CharMovementDelegate>{
-@private
-    //
-    BOOL _moving;
-    
-	Ball *ball;
-	NSArray *paddles;
-	CGPoint ballStartingVelocity;
-    Char *mCharacter;
-    
-}
-- (void)movedX:(CGFloat)dx andY:(CGFloat)dy;
-@end

@@ -59,43 +59,50 @@ static Char *mainChar;
 - (void) move
 {
 
-    CGFloat speed = 0.042;
-    self.position = CGPointMake(self.position.x + mDx * speed, self.position.y + mDy *speed);
+
 }
 
-- (bool)colideWithSprite:(CCSpriteExtended *)sprite
+- (void)colideWithSprites:(NSMutableArray *)sprites
 {
-	CGRect spriteRect = [sprite rect];
-	spriteRect.origin.x += sprite.position.x;
-	spriteRect.origin.y += sprite.position.y;
-	
-	float lowY = CGRectGetMinY(spriteRect);
-	float midY = CGRectGetMidY(spriteRect);
-	float highY = CGRectGetMaxY(spriteRect);
-	
-	float leftX = CGRectGetMinX(spriteRect);
-	float rightX = CGRectGetMaxX(spriteRect);
-	
-	if (self.position.x > leftX && self.position.x < rightX) {
+    CGFloat speed = 0.042;
+    CGPoint newPosition = CGPointMake(self.position.x + mDx * speed, self.position.y + mDy *speed);
+    
+    bool hit = NO;
+    
+    for(CCSpriteExtended *sprite in sprites){
+        CGRect spriteRect = [sprite rect];
+        spriteRect.origin.x += sprite.position.x;
+        spriteRect.origin.y += sprite.position.y;
         
-		BOOL hit = NO;
-		float angleOffset = 0.0f; 
-		
-		if (self.position.y > midY && self.position.y <= highY + 60) {
-			self.position = CGPointMake(self.position.x, highY + 60);
-			hit = YES;
-			angleOffset = (float)M_PI / 2;
-		}
+        float lowY = CGRectGetMinY(spriteRect);
+        float midY = CGRectGetMidY(spriteRect);
+        float highY = CGRectGetMaxY(spriteRect);
         
-		else if (self.position.y < midY && self.position.y >= lowY - 60) {
-			self.position = CGPointMake(self.position.x, lowY - 60);
-			hit = YES;
-			angleOffset = -(float)M_PI / 2;
-		}
-		
-		return hit;
-	}	
-    return false;
+        float leftX = CGRectGetMinX(spriteRect);
+        float rightX = CGRectGetMaxX(spriteRect);
+        
+        if (self.position.x > leftX && self.position.x < rightX) {
+            
+            float angleOffset = 0.0f; 
+            
+            if (self.position.y > midY && self.position.y <= highY + 60) {
+                self.position = CGPointMake(self.position.x, highY + 60);
+                hit = YES;
+                angleOffset = (float)M_PI / 2;
+            }
+            
+            else if (self.position.y < midY && self.position.y >= lowY - 60) {
+                self.position = CGPointMake(self.position.x, lowY - 60);
+                hit = YES;
+                angleOffset = -(float)M_PI / 2;
+            }
+            
+        }	        
+    }
+    if(!hit){
+        self.position = newPosition;
+    }
+
 }
 
 @end
