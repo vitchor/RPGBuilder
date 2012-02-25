@@ -7,6 +7,8 @@
 //
 
 #import "Char.h"
+#import "CCSprite.h"
+#import "CCSpriteExtended.h"
 
 @implementation Char
 
@@ -29,9 +31,20 @@
     
 }
 
+static Char *mainChar;
++ (Char *)mainChar { return mainChar; }
++ (void)setMainChar:(Char *)newMainChar { mainChar = newMainChar; }
+
 + (id)charWithTexture:(CCTexture2D *)aTexture
 {
 	return [[[self alloc] initWithTexture:aTexture] autorelease];
+}
+
++ (id)mainCharWithTexture:(CCTexture2D *)aTexture
+{
+    Char *character = [[[self alloc] initWithTexture:aTexture] autorelease];
+    [self setMainChar:character];
+	return character;
 }
 
 - (id)initWithTexture:(CCTexture2D *)aTexture
@@ -45,8 +58,44 @@
 
 - (void) move
 {
+
     CGFloat speed = 0.042;
     self.position = CGPointMake(self.position.x + mDx * speed, self.position.y + mDy *speed);
+}
+
+- (bool)colideWithSprite:(CCSpriteExtended *)sprite
+{
+	CGRect spriteRect = [sprite rect];
+	spriteRect.origin.x += sprite.position.x;
+	spriteRect.origin.y += sprite.position.y;
+	
+	float lowY = CGRectGetMinY(spriteRect);
+	float midY = CGRectGetMidY(spriteRect);
+	float highY = CGRectGetMaxY(spriteRect);
+	
+	float leftX = CGRectGetMinX(spriteRect);
+	float rightX = CGRectGetMaxX(spriteRect);
+	
+	if (self.position.x > leftX && self.position.x < rightX) {
+        
+		BOOL hit = NO;
+		float angleOffset = 0.0f; 
+		
+		if (self.position.y > midY && self.position.y <= highY + 60) {
+			self.position = CGPointMake(self.position.x, highY + 60);
+			hit = YES;
+			angleOffset = (float)M_PI / 2;
+		}
+        
+		else if (self.position.y < midY && self.position.y >= lowY - 60) {
+			self.position = CGPointMake(self.position.x, lowY - 60);
+			hit = YES;
+			angleOffset = -(float)M_PI / 2;
+		}
+		
+		return hit;
+	}	
+    return false;
 }
 
 @end

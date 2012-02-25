@@ -8,10 +8,12 @@
 
 #import "cocos2d.h"
 #import <Foundation/Foundation.h>
+#import "CCSpriteExtended.h"
 
-@interface Char : CCSprite <CCStandardTouchDelegate> {
+@interface Char : CCSpriteExtended <CCStandardTouchDelegate> {
     int mDx;
     int mDy; 
+    Char *mainChar;
 @private
     
 }
@@ -19,6 +21,12 @@
 @property(nonatomic, readonly) CGRect rectInPixels;
 
 + (id)charWithTexture:(CCTexture2D *)texture;
++ (id)mainCharWithTexture:(CCTexture2D *)texture;
+
++ (Char *)mainChar;
++ (void)setMainChar:(Char *)newMainChar;
+
+- (bool)colideWithSprite:(CCSpriteExtended *)sprite;
 - (void)updateSpeedWithDX:(CGFloat)dx andDY:(CGFloat)dy;
 - (void)move;
 @end

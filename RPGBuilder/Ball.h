@@ -1,10 +1,11 @@
 /* TouchesTest (c) Valentin Milea 2009
  */
 #import "cocos2d.h"
+#import "CCSpriteExtended.h"
 
 @class Paddle;
 
-@interface Ball : CCSprite {
+@interface Ball : CCSpriteExtended {
 @private
 	CGPoint velocity;
 }

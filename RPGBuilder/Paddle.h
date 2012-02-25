@@ -2,13 +2,14 @@
  */
 #import "cocos2d.h"
 #import "CharMovementDelegate.h"
+#import "CCSpriteExtended.h"
 
 typedef enum tagPaddleState {
 	kPaddleStateGrabbed,
 	kPaddleStateUngrabbed
 } PaddleState;
 
-@interface Paddle : CCSprite <CCStandardTouchDelegate> {
+@interface Paddle : CCSpriteExtended <CCStandardTouchDelegate> {
 @private
 	PaddleState state;
     CGPoint mLastTouchPoint;

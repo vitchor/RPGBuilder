@@ -1,7 +1,8 @@
 #import "cocos2d.h"
 #import "CharMovementDelegate.h"
+#import "CCSpriteExtended.h"
 
-@interface CenterBall : CCSprite <CCStandardTouchDelegate> {
+@interface CenterBall : CCSpriteExtended <CCStandardTouchDelegate> {
 @private
     CGPoint mLastTouchPoint;
     CGPoint mTouchInitialPoint;    

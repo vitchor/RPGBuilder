@@ -6,14 +6,11 @@
 
 @interface ActionScene : CCScene {
 @private
-
-    CCSprite *chest1;
-    CCSprite *chest2;    
+ 
     CCAction *_walkAction;
     CCAction *_moveAction;
+    NSMutableArray *landSprites;
 }
-@property (nonatomic, retain) CCSprite *chest1;
-@property (nonatomic, retain) CCSprite *chest2;
 @property (nonatomic, retain) CCAction *walkAction;
 @property (nonatomic, retain) CCAction *moveAction;
 @end

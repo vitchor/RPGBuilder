@@ -5,6 +5,7 @@
 #import "Ball.h"
 #import "CenterBall.h"
 #import "Char.h"
+#import "CCSpriteExtended.h"
 
 enum tagPlayer {
 	kHighPlayer,
@@ -22,8 +23,6 @@ enum {
 @end
 
 @implementation ActionScene
-@synthesize chest1 = chest1;
-@synthesize chest2 = chest2;
 @synthesize moveAction = _moveAction;
 @synthesize walkAction = _walkAction;
 
@@ -31,15 +30,23 @@ enum {
 {
 	if ((self = [super init]) == nil) return nil;
 	
+    //Background
+    CCSprite *background = [CCSprite spriteWithFile:@"back.png"];
+	background.position = CGPointMake(160, 240);
+    [self addChild:background];
+    
+    //Touching Actions Layer
 	ActionLayer *actionLayer = [ActionLayer node];
 	[self addChild:actionLayer];
     
+    //Animation spriteSheet
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:
      @"chest_bubble.plist"];
-    
     CCSpriteBatchNode *spriteSheet = [CCSpriteBatchNode 
                                       batchNodeWithFile:@"chest_bubble.png"];
     [self addChild:spriteSheet];
+    
+    //Creating Animations
     NSMutableArray *walkAnimFrames = [NSMutableArray array];
     for(int i = 1; i <= 3; ++i) {
         [walkAnimFrames addObject:
@@ -47,45 +54,70 @@ enum {
           [NSString stringWithFormat:@"BubbleChest%d.png", i]]];
     }
 	
-    CCAnimation *walkAnim = [CCAnimation 
+    CCAnimation *anim = [CCAnimation 
                              animationWithFrames:walkAnimFrames delay:0.1f];
     
-    CGSize winSize = [CCDirector sharedDirector].winSize;
-    self.chest1 = [CCSprite spriteWithSpriteFrameName:@"BubbleChest1.png"];        
-    chest1.position = ccp(winSize.width/2 - 30, winSize.height/2 + 30);
-    self.walkAction = [CCRepeatForever actionWithAction:
-                       [CCAnimate actionWithAnimation:walkAnim restoreOriginalFrame:NO]];
-    [chest1 runAction:_walkAction];
-    [spriteSheet addChild:chest1];
     
-    self.chest2 = [CCSprite spriteWithSpriteFrameName:@"BubbleChest1.png"];        
-    chest2.position = ccp(winSize.width/2 + 30 , winSize.height/2 + 30);
+    NSMutableArray *landSpritesC = [NSMutableArray arrayWithCapacity:4];
+    
+    CGSize winSize = [CCDirector sharedDirector].winSize;
+    CCSpriteExtended *chest1 = [CCSpriteExtended spriteWithSpriteFrameName:@"BubbleChest1.png"];        
+    chest1.position = ccp(winSize.width/2 - 60, winSize.height/2 + 60);
     self.walkAction = [CCRepeatForever actionWithAction:
-                       [CCAnimate actionWithAnimation:walkAnim restoreOriginalFrame:NO]];
+                       [CCAnimate actionWithAnimation:anim restoreOriginalFrame:NO]];
+    [chest1 runAction:_walkAction];
+    [landSpritesC addObject:chest1];
+    
+    
+    CCSpriteExtended *chest2 = [CCSpriteExtended spriteWithSpriteFrameName:@"BubbleChest1.png"];        
+    chest2.position = ccp(winSize.width/2 + 60 , winSize.height/2 + 60);
+    self.walkAction = [CCRepeatForever actionWithAction:
+                       [CCAnimate actionWithAnimation:anim restoreOriginalFrame:NO]];
     [chest2 runAction:_walkAction];
     chest2.flipX = YES;
-    [spriteSheet addChild:chest2];
+    [landSpritesC addObject:chest2];
     
-    CCSprite *chest3 = [CCSprite spriteWithSpriteFrameName:@"BubbleChest1.png"];        
-    chest3.position = ccp(winSize.width/2 - 30, winSize.height/2 - 30);
+    CCSpriteExtended *chest3 = [CCSpriteExtended spriteWithSpriteFrameName:@"BubbleChest1.png"];        
+    chest3.position = ccp(winSize.width/2 - 60, winSize.height/2 - 60);
     self.walkAction = [CCRepeatForever actionWithAction:
-                       [CCAnimate actionWithAnimation:walkAnim restoreOriginalFrame:NO]];
+                       [CCAnimate actionWithAnimation:anim restoreOriginalFrame:NO]];
     [chest3 runAction:_walkAction];
     chest3.flipY = YES;
-    [spriteSheet addChild:chest3];
+    [landSpritesC addObject:chest3];
     
-    CCSprite *chest4 = [CCSprite spriteWithSpriteFrameName:@"BubbleChest1.png"];        
-    chest4.position = ccp(winSize.width/2 + 30 , winSize.height/2 - 30);
+    CCSpriteExtended *chest4 = [CCSpriteExtended spriteWithSpriteFrameName:@"BubbleChest1.png"];        
+    chest4.position = ccp(winSize.width/2 + 60 , winSize.height/2 - 60);
     self.walkAction = [CCRepeatForever actionWithAction:
-                       [CCAnimate actionWithAnimation:walkAnim restoreOriginalFrame:NO]];
+                       [CCAnimate actionWithAnimation:anim restoreOriginalFrame:NO]];
     [chest4 runAction:_walkAction];
     chest4.flipX = YES;
     chest4.flipY = YES;    
-    [spriteSheet addChild:chest4];
+    [landSpritesC addObject:chest4];
     
+    landSprites = [landSpritesC copy];
+	
+	for (CCSpriteExtended *sprite in landSprites)
+		[self addChild:sprite];
+    
+    [self schedule:@selector(doStep:)];
+
     
     
 	return self;
+}
+
+- (void)doStep:(ccTime)delta
+{
+    
+	//NSMutableArray *landSpritesC = [landSprites copy];
+	bool hit = false;
+	for (CCSpriteExtended *sprite in landSprites) {
+		hit = hit || [[Char mainChar] colideWithSprite:sprite];
+    }
+    if(!hit) {
+        [[Char mainChar] move];
+    }
+    
 }
 
 - (void)onExit
@@ -107,13 +139,6 @@ enum {
 	CCTexture2D *centerBallTexture = [[CCTextureCache sharedTextureCache] addImage:@"ball.png"];
 	CCTexture2D *paddleTexture = [[CCTextureCache sharedTextureCache] addImage:@"outsideBall.png"];    
     
-    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:
-     @"AnimBear.plist"];
-    
-    CCSpriteBatchNode *spriteSheet = [CCSpriteBatchNode 
-                                      batchNodeWithFile:@"chest_bubble.png"];
-    [self addChild:spriteSheet];
-    
 	CCTexture2D *charTexture = [[CCTextureCache sharedTextureCache] addImage:@"char.png"];        
 	
 	NSMutableArray *paddlesM = [NSMutableArray arrayWithCapacity:4];
@@ -123,13 +148,12 @@ enum {
 	//ball.velocity = ballStartingVelocity;
 	//[self addChild:ball];
 
-    CCSprite *background = [CCSprite spriteWithFile:@"back.png"];
-	background.position = CGPointMake(160, 240);
-	[paddlesM addObject:background];
-    
-    mCharacter = [Char charWithTexture:charTexture]; //92
-	mCharacter.position = CGPointMake(160, 240);
-	[paddlesM addObject:mCharacter];
+
+    Char *character = [Char mainCharWithTexture:charTexture]; //92
+    character.position = CGPointMake(160, 240);
+    [paddlesM addObject:character];
+
+
     
     Paddle *outsidePaddle = [Paddle paddleWithTexture:paddleTexture]; // 155
 	outsidePaddle.position = CGPointMake(200, 400);
@@ -147,14 +171,14 @@ enum {
 	for (Paddle *paddle in paddles)
 		[self addChild:paddle];
 	
-	[self schedule:@selector(doStep:)];
+	//[self schedule:@selector(doStep:)];
 	
 	return self;
 }
 
 - (void)movedX:(CGFloat)dx andY:(CGFloat)dy 
 {
-    [mCharacter updateSpeedWithDX:dx andDY:dy];
+    [[Char mainChar] updateSpeedWithDX:dx andDY:dy];
 }
 
 - (void)dealloc
@@ -171,19 +195,6 @@ enum {
 	ball.position = CGPointMake(160.0f, 240.0f);
 	
 	// TODO -- scoring
-}
-
-- (void)doStep:(ccTime)delta
-{
-	[mCharacter move];
-	
-	for (Paddle *paddle in paddles)
-		[ball collideWithPaddle:paddle];
-	
-	if (ball.position.y > 480 - kStatusBarHeight + ball.radius)
-		[self resetAndScoreBallForPlayer:kLowPlayer];
-	else if (ball.position.y < -ball.radius)
-		[self resetAndScoreBallForPlayer:kHighPlayer];
 }
 
 @end

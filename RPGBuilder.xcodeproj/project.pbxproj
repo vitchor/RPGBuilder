@@ -169,6 +169,7 @@
 		446335DD14F8D83500A7FE75 /* chest_bubble.plist in Resources */ = {isa = PBXBuildFile; fileRef = 446335DB14F8D83500A7FE75 /* chest_bubble.plist */; };
 		446335DE14F8D83500A7FE75 /* chest_bubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 446335DC14F8D83500A7FE75 /* chest_bubble.png */; };
 		44F671EF14F8DE23009F4433 /* chest_bubble-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 44F671EE14F8DE23009F4433 /* chest_bubble-hd.png */; };
+		44F6723C14F8E4A0009F4433 /* CCSpriteExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F6723B14F8E4A0009F4433 /* CCSpriteExtended.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -458,6 +459,8 @@
 		446335DB14F8D83500A7FE75 /* chest_bubble.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = chest_bubble.plist; sourceTree = "<group>"; };
 		446335DC14F8D83500A7FE75 /* chest_bubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chest_bubble.png; sourceTree = "<group>"; };
 		44F671EE14F8DE23009F4433 /* chest_bubble-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chest_bubble-hd.png"; sourceTree = "<group>"; };
+		44F6723A14F8E4A0009F4433 /* CCSpriteExtended.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSpriteExtended.h; sourceTree = "<group>"; };
+		44F6723B14F8E4A0009F4433 /* CCSpriteExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCSpriteExtended.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -917,6 +920,8 @@
 		444C6F3714F8AA4D00D92F28 /* Sprites */ = {
 			isa = PBXGroup;
 			children = (
+				44F6723A14F8E4A0009F4433 /* CCSpriteExtended.h */,
+				44F6723B14F8E4A0009F4433 /* CCSpriteExtended.m */,
 				444C6EF514F8A30900D92F28 /* Ball.h */,
 				444C6EF614F8A30900D92F28 /* Ball.m */,
 				444C6EF814F8A30900D92F28 /* CenterBall.h */,
@@ -1170,6 +1175,7 @@
 				444C6F0E14F8A30900D92F28 /* Char.m in Sources */,
 				444C6F1314F8A30900D92F28 /* Paddle.m in Sources */,
 				444C6F1514F8A30900D92F28 /* ActionScene.m in Sources */,
+				44F6723C14F8E4A0009F4433 /* CCSpriteExtended.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
