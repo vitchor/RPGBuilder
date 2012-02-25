@@ -165,6 +165,10 @@
 		444C6F1314F8A30900D92F28 /* Paddle.m in Sources */ = {isa = PBXBuildFile; fileRef = 444C6F0214F8A30900D92F28 /* Paddle.m */; };
 		444C6F1414F8A30900D92F28 /* paddle.png in Resources */ = {isa = PBXBuildFile; fileRef = 444C6F0314F8A30900D92F28 /* paddle.png */; };
 		444C6F1514F8A30900D92F28 /* ActionScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 444C6F0514F8A30900D92F28 /* ActionScene.m */; };
+		446335D114F8D37300A7FE75 /* treasure.gif in Resources */ = {isa = PBXBuildFile; fileRef = 446335D014F8D37300A7FE75 /* treasure.gif */; };
+		446335DD14F8D83500A7FE75 /* chest_bubble.plist in Resources */ = {isa = PBXBuildFile; fileRef = 446335DB14F8D83500A7FE75 /* chest_bubble.plist */; };
+		446335DE14F8D83500A7FE75 /* chest_bubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 446335DC14F8D83500A7FE75 /* chest_bubble.png */; };
+		44F671EF14F8DE23009F4433 /* chest_bubble-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 44F671EE14F8DE23009F4433 /* chest_bubble-hd.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -450,6 +454,10 @@
 		444C6F0314F8A30900D92F28 /* paddle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paddle.png; sourceTree = "<group>"; };
 		444C6F0414F8A30900D92F28 /* ActionScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionScene.h; sourceTree = "<group>"; };
 		444C6F0514F8A30900D92F28 /* ActionScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionScene.m; sourceTree = "<group>"; };
+		446335D014F8D37300A7FE75 /* treasure.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = treasure.gif; sourceTree = "<group>"; };
+		446335DB14F8D83500A7FE75 /* chest_bubble.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = chest_bubble.plist; sourceTree = "<group>"; };
+		446335DC14F8D83500A7FE75 /* chest_bubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chest_bubble.png; sourceTree = "<group>"; };
+		44F671EE14F8DE23009F4433 /* chest_bubble-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chest_bubble-hd.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -506,6 +514,7 @@
 		444C6D5414F8A2E800D92F28 /* RPGBuilder */ = {
 			isa = PBXGroup;
 			children = (
+				446335D314F8D4D500A7FE75 /* Animations */,
 				444C6F4A14F8B3CA00D92F28 /* Protocols */,
 				444C6F3714F8AA4D00D92F28 /* Sprites */,
 				444C6F0414F8A30900D92F28 /* ActionScene.h */,
@@ -525,6 +534,7 @@
 		444C6D5514F8A2E800D92F28 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				446335D014F8D37300A7FE75 /* treasure.gif */,
 				444C6EF714F8A30900D92F28 /* ball.png */,
 				444C6EFC14F8A30900D92F28 /* char.png */,
 				444C6EFE14F8A30900D92F28 /* outsideBall-hd.png */,
@@ -927,6 +937,24 @@
 			name = Protocols;
 			sourceTree = "<group>";
 		};
+		446335D314F8D4D500A7FE75 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				446335D414F8D4DE00A7FE75 /* BubbleChest */,
+			);
+			name = Animations;
+			sourceTree = "<group>";
+		};
+		446335D414F8D4DE00A7FE75 /* BubbleChest */ = {
+			isa = PBXGroup;
+			children = (
+				446335DB14F8D83500A7FE75 /* chest_bubble.plist */,
+				446335DC14F8D83500A7FE75 /* chest_bubble.png */,
+				44F671EE14F8DE23009F4433 /* chest_bubble-hd.png */,
+			);
+			name = BubbleChest;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1025,6 +1053,10 @@
 				444C6F1114F8A30900D92F28 /* outsideBall.png in Resources */,
 				444C6F1214F8A30900D92F28 /* paddle-hd.png in Resources */,
 				444C6F1414F8A30900D92F28 /* paddle.png in Resources */,
+				446335D114F8D37300A7FE75 /* treasure.gif in Resources */,
+				446335DD14F8D83500A7FE75 /* chest_bubble.plist in Resources */,
+				446335DE14F8D83500A7FE75 /* chest_bubble.png in Resources */,
+				44F671EF14F8DE23009F4433 /* chest_bubble-hd.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1193,6 +1225,7 @@
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				HEADER_SEARCH_PATHS = "\"RPGBuilder/libs/kazmath/include\"";
 				INFOPLIST_FILE = RPGBuilder/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-lz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -1209,6 +1242,7 @@
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				HEADER_SEARCH_PATHS = "\"RPGBuilder/libs/kazmath/include\"";
 				INFOPLIST_FILE = RPGBuilder/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-lz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;

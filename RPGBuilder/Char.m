@@ -22,11 +22,11 @@
 	return CGRectMake(-s.width / 2, -s.height / 2, s.width, s.height);
 }
 
-- (void)updatePositionWithDX:(CGFloat)dx andDY:(CGFloat)dy
-{
+- (void)updateSpeedWithDX:(CGFloat)dx andDY:(CGFloat)dy
+{   
+    mDx = dx;
+    mDy = dy;
     
-    CGFloat speed = 0.2;
-    self.position = CGPointMake(self.position.x + dx * speed, self.position.y + dy *speed);
 }
 
 + (id)charWithTexture:(CCTexture2D *)aTexture
@@ -41,6 +41,12 @@
 	}
 	
 	return self;
+}
+
+- (void) move
+{
+    CGFloat speed = 0.042;
+    self.position = CGPointMake(self.position.x + mDx * speed, self.position.y + mDy *speed);
 }
 
 @end

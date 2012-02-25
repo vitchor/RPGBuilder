@@ -10,6 +10,8 @@
 #import <Foundation/Foundation.h>
 
 @interface Char : CCSprite <CCStandardTouchDelegate> {
+    int mDx;
+    int mDy; 
 @private
     
 }
@@ -17,5 +19,6 @@
 @property(nonatomic, readonly) CGRect rectInPixels;
 
 + (id)charWithTexture:(CCTexture2D *)texture;
-- (void)updatePositionWithDX:(CGFloat)dx andDY:(CGFloat)dy;
+- (void)updateSpeedWithDX:(CGFloat)dx andDY:(CGFloat)dy;
+- (void)move;
 @end

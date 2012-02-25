@@ -60,19 +60,20 @@
     CGFloat dx = mTouchInitialPoint.x - touchPoint.x;
     CGFloat dy = mTouchInitialPoint.y - touchPoint.y;
     
-    CGFloat r = 25;
+    CGFloat r = 30;
     if (hasBeenTouched) {
         if (sqrt(dx*dx + dy*dy) < r) {
             self.position = CGPointMake(touchPoint.x, touchPoint.y);
-       
+            [movementListener movedX:-dx andY:-dy];
         } else {
             self.position = CGPointMake(mTouchInitialPoint.x  - (dx*r)/sqrt(pow(dy,2) + pow(dx,2)),mTouchInitialPoint.y  - (dy*r)/sqrt(pow(dy,2) + pow(dx,2)));
+            [movementListener movedX:-(dx*r)/sqrt(pow(dy,2) + pow(dx,2)) andY:- (dy*r)/sqrt(pow(dy,2) + pow(dx,2))];
         }
         
     } else {
         hasBeenTouched = YES;
     }
-    [movementListener movedX:-dx andY:-dy];
+;
     
     mLastTouchPoint.x = touchPoint.x;
     mLastTouchPoint.y = touchPoint.y;    
@@ -81,6 +82,7 @@
 - (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     hasBeenTouched = NO;
     self.visible=NO; 
+    [movementListener movedX:0 andY:0];
     
 }
 - (void)ccTouchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event{
